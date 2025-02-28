@@ -17,13 +17,15 @@ export default function Home() {
       const tg = window.Telegram.WebApp;
       tg.expand(); // Expand full screen
       const initDataUnsafe = tg.initDataUnsafe;
-      console.log({ initDataUnsafe })
-
+      console.log({ initDataUnsafe });
+      window.alert(JSON.stringify(initDataUnsafe))
       if (initDataUnsafe?.user) {
         setUser(initDataUnsafe.user);
+        window.alert(`User: ${JSON.stringify(initDataUnsafe.user, null, 2)}`);
       }
     }
   }, []);
+  
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
